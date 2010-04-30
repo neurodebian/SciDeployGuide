@@ -1,2 +1,2 @@
-This project aim to compile guidelines with best practises for deploying
+This project aims to compile guidelines with best practises for deploying
 scientific software.
