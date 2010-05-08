@@ -11,6 +11,23 @@ software, often scientists themselves, with guidelines on
 - how to reach a large audience and what benefits would it might
   provide
 
+Why?
+====
+
+Some popular commercial (e.g. Mathworks Matlab) and free and
+open-source (e.g. Linux kernel) software grew up from academic
+environments.
+
+Academia and research are constant generators of a software, often as
+a by-product of research projects.  Often it is developed by students
+or researchers neither experienced in software development and/or
+deployment, nor having from the beginning a vision of making it
+available to public.  Reasons why finally software often becomes
+available could be numerous -- from necessity to demonstrate the
+method, to making it available to others for adoption of the method,
+to seeking contributors and collaborators.  But how to make a software
+project easy to deploy, use, and contribute?
+
 .. contents::
 
 .. accompany each section not only with a verbal description but a
@@ -34,8 +51,12 @@ Version it
 
 - Do not be afraid to release
 - Release often
-- Whenever exposed -- keep users in mind -- API
+- Whenever exposed -- keep users in mind -- API, and dependent
+  developers -- ABI(?)
+- Be consistent with versioning, choose a common scheme
 
+http://www.python.org/dev/peps/pep-0386/#the-new-versioning-algorithm
+http://plan99.net/~mike/writing-shared-libraries.html
 
 Document the sources
 ~~~~~~~~~~~~~~~~~~~~
@@ -63,6 +84,7 @@ Figure out copyright -- institution might be the one to hold it
   Pereira, Carl Edward Rasmussen, Gunnar Rätsch, Bernhard Schölkopf,
   Alexander Smola, Pascal Vincent, Jason Weston, Robert Williamson;
   Journal of Machine Learning Research 8(Oct):2443--2466, 2007.
+  http://www.jmlr.org/papers/volume8/sonnenburg07a/sonnenburg07a.pdf
 
 If possible, provide references to be used to cite your work.
 
