@@ -14,19 +14,38 @@ software, often scientists themselves, with guidelines on
 Why?
 ====
 
-Some popular commercial (e.g. Mathworks Matlab) and free and
-open-source (e.g. Linux kernel) software grew up from academic
-environments.
-
 Academia and research are constant generators of a software, often as
-a by-product of research projects.  Often it is developed by students
-or researchers neither experienced in software development and/or
-deployment, nor having from the beginning a vision of making it
-available to public.  Reasons why finally software often becomes
+a by-product of research projects.  Some popular commercial
+(e.g. Mathworks Matlab) and free and open-source (e.g. Linux kernel)
+software products grew up from academic environments.  Often
+scientific software is developed by students or researchers neither
+experienced in software development and deployment, nor having a
+vision of making it available to public right from the beginning of
+the development.  Reasons why, finally, software often becomes
 available could be numerous -- from necessity to demonstrate the
 method, to making it available to others for adoption of the method,
 to seeking contributors and collaborators.  But how to make a software
 project easy to deploy, use, and contribute?
+
+There exist quite a few of other guidelines for software developers.
+Some of them accent on development aspects, some on distribution and
+deployment.  Covering all aspects becomes a tedious job requiring the
+document to grow considerably.  In this little document we want to
+touch upon a few aspects which we consider of special importance/use
+in the domain of scientific software development.
+
+References
+----------
+
+http://wiki.debian.org/GettingPackaged
+ ... "what we do to your software, what we do for you and what you can
+ do to help us." with references to other guides
+
+http://us.pycon.org/media/2010/talkdata/PyCon2010/038/paper.html
+ Cross-platform Application Development and Distribution
+
+http://mail.python.org/pipermail/python-dev/2010-April/099729.html
+ [Python-Dev] what to do if you don't want your module in Debian
 
 .. contents::
 
@@ -46,14 +65,21 @@ Have your code under control
 Keep it under version control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Proper version control system would allow easy separation between what
+is made to public and what should be kept private temporarily
+(bleeding edge development, material waiting for accompanying
+publication) or permanently (commercial interest).
+
 Version it
 ~~~~~~~~~~
 
 - Do not be afraid to release
-- Release often
+- `Release early, release often`_
 - Whenever exposed -- keep users in mind -- API, and dependent
   developers -- ABI(?)
 - Be consistent with versioning, choose a common scheme
+
+.. _`Release early, release often`: http://en.wikipedia.org/wiki/Release_early,_release_often
 
 http://www.python.org/dev/peps/pep-0386/#the-new-versioning-algorithm
 http://plan99.net/~mike/writing-shared-libraries.html
@@ -231,3 +257,13 @@ the `Creative Commons Attribution-ShareAlike`_ license.
 * Copyright © 2010 Michael Hanke
 
 .. _Creative Commons Attribution-ShareAlike: http://creativecommons.org/licenses/by-sa/3.0/
+
+
+Miscellaneous yet to be placed in
+=================================
+
+Some research projects do not wait for publication but make software
+available and become extremely popular (even at times without adhering to
+advises described above): e.g. LIBSVM
+
+
