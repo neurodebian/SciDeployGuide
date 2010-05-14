@@ -102,6 +102,15 @@ Choose appropriate license and attribution
 
 Figure out copyright -- institution might be the one to hold it
 
+Try to use maximally possible permissible license, do not constrain
+types of usage without real necessity.
+
+It would be much harder later on to change the license to more
+permissible; on contrary you can always create a derivative work
+(effectively simply changing the license of the project if you are
+core developer) to more restrictive compatible with original license
+(i.e. go from any GPL-compatible license, such as MIT, BSD to GPL)
+
 "Which license to choose?" [SMC+07]_ , keep in mind DFSG
 
 .. [SMC+07] The Need for Open Source Software in Machine Learning
@@ -112,12 +121,18 @@ Figure out copyright -- institution might be the one to hold it
   Journal of Machine Learning Research 8(Oct):2443--2466, 2007.
   http://www.jmlr.org/papers/volume8/sonnenburg07a/sonnenburg07a.pdf
 
-If possible, provide references to be used to cite your work.
+Please do not enforce, but rather advise, users to reference your
+software or a corresponding scientific publication relevant to the
+software.  For that, provide references to be used to cite your work.
 
+It is conventional that copyright/license information usually
+distributed along with the software in file COPYING.txt or LICENSE.txt
 
 Document it
 ~~~~~~~~~~~
 
+At minimum provide README.txt describing briefly what is the software
+good for and how to use it, and INSTALL.txt for 
 sphinx  wiki
 
 Provide clean ways to contact you
