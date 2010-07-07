@@ -31,7 +31,7 @@ There exist quite a few of other guidelines for software developers.
 Some of them accent on development aspects, some on distribution and
 deployment.  Covering all aspects becomes a tedious job requiring the
 document to grow considerably.  In this little document we want to
-touch upon a few aspects which we consider of special importance/use
+touch upon a few aspects which are of special importance/use
 in the domain of scientific software development.
 
 References
@@ -65,24 +65,63 @@ Have your code under control
 Keep it under version control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Version control systems became integral part of nearly any software
+development.  You might like to research and choose the one which you
+feel comfortable with the most.  If you are already experienced with
+one of them but feel that you might be missing advantages of the other
+existing systems, do not hesitate to research -- you might be missing
+a lot.
+
 Proper version control system would allow easy separation between what
 is made to public and what should be kept private temporarily
 (bleeding edge development, material waiting for accompanying
 publication) or permanently (commercial interest).
+
+Having sources under version control might help to determine specific
+change which lead to a change in the results (`git bisect`_).
+
+Comment your commits.  You might like to adhere to a prefix scheme
+where some commits are marked as change in documentation, bug fixes,
+new features (possibly extending API), remove feature, enhancements
+(no API changes, but internal improvements, e.g. optimization), or
+refactoring (no functional changes but could be API changes).
+Following set of prefixes could be chosen then: DOC, BF, NF, RM, ENH,
+RF correspondingly.  Prefixes allow for easy grouping for the summary
+between the releases of what was accomplished, and make it easier to
+grasp the evolution of the development.
+
+Provide brief description for the commit message, do not leave it
+uncommented.  If you cannot come up with a simple description, it is
+questionable that you have anything valuable to commit.
+
+If some command line construct (shell pipe of sed/awk/grep) was used
+to produce the desired effect to be committed, include command line
+with the extended commit message -- it might be found handy later on
+or clarify what lead to a mistake.
+
+Atomic commits within version control repository ease sharing of bug
+fixes among both development and already released versions of
+software (if merging of branches is not an option, look into commands
+analogous to `git cherry-pick`_).
+
+.. _git bisect: http://www.kernel.org/pub/software/scm/git/docs/git-bisect.html
+.. _git cherry-pick: http://www.kernel.org/pub/software/scm/git/docs/git-cherry-pick.html
+
 
 Version it
 ~~~~~~~~~~
 
 - Do not be afraid to release
 - `Release early, release often`_
-- Whenever exposed -- keep users in mind -- API, and dependent
-  developers -- ABI(?)
+- Whenever API exposed -- keep users and developers in mind, and do
+  not forget about distributions (ABI).
 - Be consistent with versioning, choose a common scheme
 
 .. _`Release early, release often`: http://en.wikipedia.org/wiki/Release_early,_release_often
 
 http://www.python.org/dev/peps/pep-0386/#the-new-versioning-algorithm
 http://plan99.net/~mike/writing-shared-libraries.html
+
 
 Document the sources
 ~~~~~~~~~~~~~~~~~~~~
@@ -93,6 +132,11 @@ Have unit-tests
 Have a regression test suite
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+For libraries -- think about API
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+http://people.redhat.com/drepper/goodpractice.pdf
+
 
 Approach the users
 ------------------
@@ -100,7 +144,7 @@ Approach the users
 Choose appropriate license and attribution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Figure out copyright -- institution might be the one to hold it
+Figure out copyright -- institution might be the one to hold it.
 
 Try to use maximally possible permissible license, do not constrain
 types of usage without real necessity.
@@ -132,7 +176,9 @@ Document it
 ~~~~~~~~~~~
 
 At minimum provide README.txt describing briefly what is the software
-good for and how to use it, and INSTALL.txt for 
+good for and how to use it, and INSTALL.txt for generic installation
+steps at least on your own platform.
+
 sphinx  wiki
 
 Provide clean ways to contact you
@@ -157,7 +203,10 @@ Do not take unnecessary burden
 Make use of build tools
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-brief learning could save you days
+If there is a shadow of thought that current build tools you know and
+using are suboptimal, have a brief look at other tools already
+available. Choosing the right build platform could save you countless
+hours of unnecessary work:
 
 make/cmake/scons
 
@@ -165,9 +214,10 @@ make/cmake/scons
 Get to know useful tools
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-IDEs: emacs ;)
-binaries: gdb valgrind ccache prof
-Python: ipython
+Keep an eye on the tools available for a specific aspect of
+development.  Choose IDE which you feel convenient with, discover the
+tools to ease debugging and troubleshooting (e.g. gdb, valgrind,
+ccache, prof).
 
 
 Do not fork 3rd-party software
